@@ -47,19 +47,13 @@ const MoviesPage = () => {
         fetchSearch();
      }, [query]);
 
-     
-
     return (
         <div>
             <form className={css.form} onSubmit={handleSubmit}>
                 <input className={css.input} type='text' name='query' placeholder="Searhing name..." onChange={handleInputChange} value={inputValue}></input>
                 <button type='submit'>Search</button>
             </form>
-            {listResult.length !== 0 && query !== null && (
-                <NavLink className={classForLinks} key={movie.id} to={`${movie.id}`} state={location}>
-                    <MovieList movies={listResult}/>
-                </NavLink>
-            )}
+            {listResult.length > 0 && query !== null && (<MovieList movies={listResult}/>)}
         </div>
     );
 }
