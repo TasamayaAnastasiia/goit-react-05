@@ -9,7 +9,7 @@ function HomePage() {
     const [listMovies, setListMovies] = useState([]);
 
     useEffect(() => {
-        const fetchData = async() => {
+        const fetchData = async () => {
               try {
                   const movies = await Data();
                   setListMovies(movies);
